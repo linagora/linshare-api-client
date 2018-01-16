@@ -1,7 +1,3 @@
 module.exports = {
-  test
+  Client: require('./Client')
 };
-
-function test() {
-  console.log('Test'); // eslint-disable-line no-console
-}
