@@ -10,7 +10,7 @@ Bower:
 
 NPM:
 
-`npm install @linagora/linshare-api-client`
+`npm install linshare-api-client`
 
 ## Usage
 
