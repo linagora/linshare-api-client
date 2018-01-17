@@ -4,17 +4,43 @@
 
 ## Installation
 
-Bower:
-
-`bower install linshare-api-client`
-
 NPM:
 
 `npm install linshare-api-client`
 
+Bower:
+
+`bower install linagora/linshare-api-client`
+
 ## Usage
 
-_To be defined_
+```javascript
+const { Client } = require('linshare-api-client');
+
+const client = new Client({
+  baseUrl: 'https://files.linshare.local/linshare/webservice/rest',
+  auth: {
+    type: 'basic',
+    username: '<username>',
+    password: '<password>'
+    // OR by JWT
+    // type: 'jwt',
+    // token: '<token>'
+  }
+});
+
+client.user.workgroup.list()
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+```
+
+On browser:
+
+```javascript
+const Client = window.LinshareApiClient.Client;
+
+...
+```
 
 ## Release
 
