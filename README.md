@@ -42,6 +42,34 @@ const Client = window.LinshareApiClient.Client;
 ...
 ```
 
+## APIs
+
+### User API
+
+#### Workgroup
+
+__List workgroups__
+
+```javascript
+client.user.workgroup.list().then(...)
+```
+
+__List nodes in a workgroup__
+
+```javascript
+client.user.workgroup.listNodes(workgroupUuid, options).then(...)
+```
+
+- `options` (optional):  `{ parent: 'parentNodeUuid', type: 'FOLDER | DOCUMENT' }`
+
+#### Documents
+
+__List documents__
+
+```javascript
+client.user.documents.list().then(...)
+```
+
 ## Release
 
 Assume that you are in `master` branch and you have write access to the `origin`
