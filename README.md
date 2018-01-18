@@ -70,6 +70,21 @@ __List documents__
 client.user.documents.list().then(...)
 ```
 
+### Share
+
+__Share documents__
+
+```javascript
+client.user.shares.shareDocuments({
+  documents: ['documentUuid1', 'documentUuid2'],
+  recipients: [{
+    mail: 'user1@domain.com'
+  }, {
+    mail: 'user2@domain.com'
+  }]
+}).then(...)
+```
+
 ## Release
 
 Assume that you are in `master` branch and you have write access to the `origin`
