@@ -1,6 +1,6 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-const { Client } = require('../../src');
+const { Client, NODE_TYPE } = require('../../src');
 
 const client = new Client({
   baseUrl: 'https://files.linshare.local/linshare/webservice/rest',
@@ -36,7 +36,7 @@ function readNode(workGroup, node, level = 1) {
       });
   }
 
-  if (node.type === 'DOCUMENT') {
+  if (node.type === NODE_TYPE.DOCUMENT) {
     return console.log(`${prefix} File: ${node.name}`);
   }
 
@@ -77,7 +77,7 @@ function sortNodes(nodes) {
       return node1.name > node2.name ? 1 : -1;
     }
 
-    if (node1.type === 'DOCUMENT') {
+    if (node1.type === NODE_TYPE.DOCUMENT) {
       return -1;
     }
 
