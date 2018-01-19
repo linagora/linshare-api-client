@@ -7,5 +7,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     library: 'LinshareApiClient',
     libraryTarget: 'umd'
+  },
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      include: path.resolve(__dirname, 'src'),
+      loader: 'babel-loader'
+    }]
   }
 };
