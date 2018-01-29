@@ -3,6 +3,7 @@
 set -o errexit -o nounset
 
 version=$1
+remote=${2:-origin}
 
 git checkout master
 
@@ -18,7 +19,7 @@ npm run dist
 git add dist -f
 git commit --amend --no-edit
 git tag v$version
-git push origin refs/tags/v${version}
+git push $remote refs/tags/v${version}
 
 git checkout master
-git push origin master
+git push $remote master

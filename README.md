@@ -92,6 +92,10 @@ remote, type the following command to release a new version:
 
 `./scripts/release.sh x.y.z`
 
+In case your Git remote is NOT `origin`:
+
+`./scripts/release.sh x.y.z my-remote`
+
 ## Licence
 
 [Affero GPL v3](http://www.gnu.org/licenses/agpl-3.0.html)
