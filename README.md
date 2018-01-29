@@ -6,11 +6,11 @@
 
 NPM:
 
-`npm install linshare-api-client`
+`npm install linagora/linshare-api-client`
 
 Bower:
 
-`bower install linagora/linshare-api-client`
+`bower install linshare-api-client`
 
 ## Usage
 
