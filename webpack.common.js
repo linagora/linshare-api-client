@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -14,5 +15,10 @@ module.exports = {
       include: path.resolve(__dirname, 'src'),
       loader: 'babel-loader'
     }]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      Promise: 'es6-promise'
+    })
+  ]
 };
