@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 module.exports = function(client, parentPath) {
   const BASE_PATH = `${parentPath}/documents`;
 
@@ -13,12 +15,18 @@ module.exports = function(client, parentPath) {
   }
 
   function create(formData, { async, onUploadProgress } = {}) {
-    return client.api({
+    const source = axios.CancelToken.source();
+    const promise = client.api({
       url: BASE_PATH,
       method: 'POST',
       data: formData,
       onUploadProgress,
-      params: { async }
+      params: { async },
+      cancelToken: source.token
     });
+
+    promise.cancel = () => source.cancel('Operation canceled by the user.');
+
+    return promise;
   }
 };
