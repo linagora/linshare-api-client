@@ -13,10 +13,8 @@ class Client {
     this.user = user(this);
   }
 
-  api({ url, method, data, params }) {
-    method = method || 'GET';
-
-    return this.httpClient({ url, method, data, params }).then(resp => resp.data);
+  api(config) {
+    return this.httpClient(config).then(resp => resp.data);
   }
 }
 
