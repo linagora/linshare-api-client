@@ -70,6 +70,26 @@ __List documents__
 client.user.documents.list().then(...)
 ```
 
+__Create a document__
+
+Upload a file to My space
+
+```javascript
+var options = {
+  async: false,
+  onUploadProgress: function(progressEvent) {
+    var processedPercent = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+    console.log('Uploading...', processedPercent);
+  }
+};
+var formData = new FormData();
+
+formData.append('file', file);
+formData.append('filesize', fileSize);
+
+client.user.documents.create(formData, options).then(...)
+```
+
 ### Share
 
 __Share documents__
