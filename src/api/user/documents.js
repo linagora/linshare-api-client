@@ -5,7 +5,8 @@ module.exports = function(client, parentPath) {
 
   return {
     list,
-    create
+    create,
+    createFromUrl
   };
 
   function list() {
@@ -28,5 +29,14 @@ module.exports = function(client, parentPath) {
     promise.cancel = () => source.cancel('Operation canceled by the user.');
 
     return promise;
+  }
+
+  function createFromUrl({ url, fileName, size } = {}, { async } = {}) {
+    return client.api({
+      url: BASE_PATH,
+      method: 'POST',
+      data: { url, fileName, size },
+      params: { async }
+    });
   }
 };
