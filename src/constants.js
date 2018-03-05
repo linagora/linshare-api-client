@@ -2,5 +2,11 @@ module.exports = {
   NODE_TYPE: {
     FOLDER: 'FOLDER',
     DOCUMENT: 'DOCUMENT'
+  },
+  ASYNC_TASK_STATUS: {
+    PENDING: 'PENDING',
+    PROCESSING: 'PROCESSING',
+    SUCCESS: 'SUCCESS',
+    FAILED: 'FAILED'
   }
 };

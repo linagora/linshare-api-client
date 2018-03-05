@@ -6,7 +6,8 @@ module.exports = function(client, parentPath) {
   return {
     list,
     create,
-    createFromUrl
+    createFromUrl,
+    getAsyncTask
   };
 
   function list() {
@@ -37,6 +38,12 @@ module.exports = function(client, parentPath) {
       method: 'POST',
       data: { url, fileName, size },
       params: { async }
+    });
+  }
+
+  function getAsyncTask(asyncTaskId) {
+    return client.api({
+      url: `${BASE_PATH}/${asyncTaskId}/async`
     });
   }
 };
