@@ -5,7 +5,8 @@ module.exports = function(client, parentPath) {
 
   return {
     list,
-    listNodes
+    listNodes,
+    downloadDocument
   };
 
   function list() {
@@ -19,6 +20,14 @@ module.exports = function(client, parentPath) {
     return client.api({
       url: `${BASE_PATH}/${workGroupUuid}/nodes`,
       params: { parent, type }
+    });
+  }
+
+  function downloadDocument(workGroupUuid, documentUuid) {
+    return client.api({
+      url: `${BASE_PATH}/${workGroupUuid}/nodes/${documentUuid}/download`,
+      method: 'GET',
+      responseType: 'blob'
     });
   }
 };
