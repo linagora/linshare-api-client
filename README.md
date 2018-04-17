@@ -105,6 +105,15 @@ client.user.shares.shareDocuments({
 }).then(...)
 ```
 
+__Download document__
+
+```javascript
+client.user.workgroup.downloadDocument('work-group-uuid', 'node-uuid')
+  .then(function(blob) {
+    const file = new File([blob], 'documentname');
+  })
+```
+
 ## Release
 
 Assume that you are in `master` branch and you have write access to the `origin`
