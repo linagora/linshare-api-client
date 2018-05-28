@@ -4,11 +4,18 @@ module.exports = function(client, parentPath) {
   const BASE_PATH = `${parentPath}/documents`;
 
   return {
+    get,
     list,
     create,
     createFromUrl,
     getAsyncTask
   };
+
+  function get(documentId) {
+    return client.api({
+      url: `${BASE_PATH}/${documentId}`
+    });
+  }
 
   function list() {
     return client.api({
