@@ -63,6 +63,11 @@ client.user.workgroup.listNodes(workgroupUuid, options).then(...)
 - `options` (optional):  `{ parent: 'parentNodeUuid', type: 'FOLDER | DOCUMENT' }`
 
 #### Documents
+__Get a document__
+
+```javascript
+client.user.documents.get('documentUuid').then(...)
+```
 
 __List documents__
 
