@@ -27,7 +27,7 @@ module.exports = function(client, parentPath) {
     return client.api({
       url: `${BASE_PATH}/${workGroupUuid}/nodes/${documentUuid}/download`,
       method: 'GET',
-      responseType: 'blob'
+      responseType: 'arraybuffer'
     });
   }
 };
