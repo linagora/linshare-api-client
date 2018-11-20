@@ -119,6 +119,13 @@ client.user.workgroup.downloadDocument('work-group-uuid', 'node-uuid')
   })
 ```
 
+__Get a node in workgroup__
+
+```javascript
+client.user.workgroup.getNode('work-group-uuid', 'node-uuid')
+  .then(...)
+```
+
 ## Release
 
 Assume that you are in `master` branch and you have write access to the `origin`
