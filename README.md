@@ -112,8 +112,12 @@ client.user.shares.shareDocuments({
 
 __Download document__
 
+Accept different response type with default value being `blob`. You are advised to use different response types based on running environment:
+ - `blob` is for browser
+ - `arrayBuffer` is for nodejs environment
+
 ```javascript
-client.user.workgroup.downloadDocument('work-group-uuid', 'node-uuid')
+client.user.workgroup.downloadDocument('work-group-uuid', 'node-uuid', { responseType: 'blob' })
   .then(function(blob) {
     const file = new File([blob], 'documentname');
   })

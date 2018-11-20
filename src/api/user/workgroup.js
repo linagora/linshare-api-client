@@ -29,11 +29,10 @@ module.exports = function(client, parentPath) {
     });
   }
 
-  function downloadDocument(workGroupUuid, documentUuid) {
+  function downloadDocument(workGroupUuid, documentUuid, options = { responseType: 'blob' }) {
     return client.api({
       url: `${BASE_PATH}/${workGroupUuid}/nodes/${documentUuid}/download`,
-      method: 'GET',
-      responseType: 'blob'
+      responseType: options.responseType
     });
   }
 };
