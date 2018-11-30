@@ -46,6 +46,14 @@ const Client = window.LinshareApiClient.Client;
 
 ### User API
 
+#### Authentication
+
+__Get authorized user__
+
+```javascript
+client.user.authentication.authorized().then(...)
+```
+
 #### Workgroup
 
 __List workgroups__
