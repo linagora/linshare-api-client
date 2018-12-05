@@ -56,6 +56,26 @@ client.user.authentication.authorized().then(...)
 
 #### Workgroup
 
+__Create document in a node of work group from URL__
+
+```javascript
+client.user.workgroup.createDocumentFromUrl('work-group-uuid', documentInfo, options)
+  .then(...)
+```
+
+- `documentInfo`: an object contains
+  - url (required): file url
+  - fileName (optional): file name
+  - size (optional): file size
+- `options` (optional):  `{ parent: 'parentNodeUuid', async: true/false, strict: true/false }`
+
+__Delete a node in workgroup__
+
+```javascript
+client.user.workgroup.deleteNode('work-group-uuid', 'node-uuid')
+  .then(...)
+```
+
 __List workgroups__
 
 ```javascript
@@ -69,6 +89,13 @@ client.user.workgroup.listNodes(workgroupUuid, options).then(...)
 ```
 
 - `options` (optional):  `{ parent: 'parentNodeUuid', type: 'FOLDER | DOCUMENT' }`
+
+__Update a node in workgroup__
+
+```javascript
+client.user.workgroup.updateNode('work-group-uuid', 'node-uuid', modified)
+  .then(...)
+```
 
 #### Documents
 __Get a document__
