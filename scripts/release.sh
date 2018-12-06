@@ -15,11 +15,13 @@ git commit -m "Bump version number to ${version}"
 
 # for Bower distribution
 git checkout -b release-v$version
+sed -i -E "/dist\//d" .gitignore
 npm run dist
 git add dist -f
 git commit --amend --no-edit
 git tag v$version
 git push $remote refs/tags/v${version}
+npm publish
 
 git checkout master
 git push $remote master
