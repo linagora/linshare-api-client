@@ -22,6 +22,7 @@ git commit --amend --no-edit
 git tag v$version
 git push $remote refs/tags/v${version}
 npm publish
+git checkout .gitignore
 
 git checkout master
 git push $remote master
