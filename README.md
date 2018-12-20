@@ -172,6 +172,13 @@ client.user.sharedSpaceNodes.findMemberByAccountUuid('shared-space-node-uuid', '
   .then(...)
 ```
 
+### Shared space roles
+__Get a shared space role by uuid__
+```javascript
+client.user.sharedSpaceRoles.findAllPermissions('shared-space-role-uuid')
+  .then(...)
+```
+
 ## Release
 
 Assume that you are in `master` branch and you have write access to the `origin`
