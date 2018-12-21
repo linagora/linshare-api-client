@@ -165,6 +165,20 @@ client.user.workgroup.getNode('work-group-uuid', 'node-uuid')
   .then(...)
 ```
 
+### Shared space nodes
+__Get a member of a shared space node__
+```javascript
+client.user.sharedSpaceNodes.findMemberByAccountUuid('shared-space-node-uuid', 'member-uuid')
+  .then(...)
+```
+
+### Shared space roles
+__Get a shared space role by uuid__
+```javascript
+client.user.sharedSpaceRoles.findAllPermissions('shared-space-role-uuid')
+  .then(...)
+```
+
 ## Release
 
 Assume that you are in `master` branch and you have write access to the `origin`
