@@ -8,8 +8,14 @@
     "lint": "eslint src webpack.*.js",
     "build-dev": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "dist": "rm dist -rf && npm run build && npm run build-dev"
+    "dist": "rm dist -rf && npm run build && npm run build-dev",
+    "prepublishOnly": "npm i && npm run dist"
   },
+  "files": [
+    "src",
+    "dist",
+    "bower.json"
+  ],
   "keywords": [
     "linshare",
     "api"
