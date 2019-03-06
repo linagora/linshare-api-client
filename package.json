@@ -11,6 +11,11 @@
     "dist": "rm dist -rf && npm run build && npm run build-dev",
     "prepublishOnly": "npm i && npm run dist"
   },
+  "files": [
+    "src",
+    "dist",
+    "bower.json"
+  ],
   "keywords": [
     "linshare",
     "api"
